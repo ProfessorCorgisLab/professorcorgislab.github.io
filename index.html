@@ -1248,4 +1248,16 @@
     document.getElementById('mobileNav').classList.toggle('open');
   }
   function closeMenu() {
-    document.getElementById('hamburger')
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobileNav').classList.remove('open');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+</body>
+</html>
