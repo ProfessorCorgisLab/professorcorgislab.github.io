@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Professor Corgi's Laboratory | Research Peptides & Supplies</title>
+  <title>Professor Corgi's Laboratory | Research Peptides &amp; Supplies</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -31,38 +31,26 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; font-weight: 500; }
-
-    /* NOISE */
     body::before {
       content: '';
       position: fixed; inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
       opacity: 0.022; pointer-events: none; z-index: 999;
     }
-
-    /* ORBS */
     .bg-orbs { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
     .orb { position: absolute; border-radius: 50%; filter: blur(90px); opacity: 0.15; animation: drift 22s ease-in-out infinite; }
     .orb-1 { width: 600px; height: 600px; background: var(--purple); top: -150px; left: -150px; animation-delay: 0s; }
     .orb-2 { width: 450px; height: 450px; background: var(--blue); bottom: 5%; right: -100px; animation-delay: -8s; }
     .orb-3 { width: 350px; height: 350px; background: var(--pink); top: 45%; left: 35%; animation-delay: -16s; }
-    /* MOLECULES */
     .molecules { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
-    .mol {
-      position: absolute;
-      opacity: 0;
-      animation: molFloat linear infinite;
-    }
+    .mol { position: absolute; opacity: 0; animation: molFloat linear infinite; }
     .mol svg { display: block; }
-
     @keyframes molFloat {
       0%   { transform: translateY(100vh) rotate(0deg);   opacity: 0; }
       8%   { opacity: 0.85; }
       88%  { opacity: 0.75; }
       100% { transform: translateY(-160px) rotate(360deg); opacity: 0; }
     }
-
-    /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -71,10 +59,7 @@
       backdrop-filter: blur(24px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo {
-      display: flex; align-items: center; gap: 0.5rem;
-      text-decoration: none; color: var(--text);
-    }
+    .nav-logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--text); }
     .nav-logo img { height: 42px; width: auto; }
     .nav-logo-text { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; line-height: 1.1; }
     .nav-logo-text span { color: var(--pink); display: block; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple-light); font-weight: 400; }
@@ -83,15 +68,11 @@
     .nav-links a:hover { color: var(--text); }
     .nav-cta { background: var(--purple) !important; color: var(--text) !important; padding: 0.45rem 1.1rem; border-radius: 6px; transition: background 0.2s, box-shadow 0.2s !important; }
     .nav-cta:hover { background: var(--purple-light) !important; box-shadow: 0 0 20px var(--purple-glow) !important; }
-
-    /* HAMBURGER */
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; z-index: 200; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--text-muted); border-radius: 2px; transition: all 0.3s ease; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* MOBILE NAV DRAWER */
     .mobile-nav {
       display: none; position: fixed; top: 68px; left: 0; right: 0; bottom: 0;
       background: rgba(10,8,18,0.97); backdrop-filter: blur(24px);
@@ -102,15 +83,12 @@
     .mobile-nav a { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
     .mobile-nav a:hover { color: var(--text); }
     .mobile-nav .m-cta { background: var(--purple); color: var(--text) !important; padding: 0.75rem 2.5rem; border-radius: 8px; font-size: 1.1rem; }
-
     @media (max-width: 768px) {
       nav { padding: 0 1.25rem; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
       .mobile-nav { display: flex; }
     }
-
-    /* HERO */
     #home {
       position: relative; z-index: 1; min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
@@ -135,38 +113,22 @@
     .stat-num .a { color: var(--pink); }
     .stat-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); display: block; margin-top: 0.2rem; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-
-    /* SECTIONS */
     section { position: relative; z-index: 1; padding: 6rem 2rem; }
     .container { max-width: 1120px; margin: 0 auto; }
     .section-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--purple-light); display: block; margin-bottom: 0.6rem; }
     .section-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(1.8rem, 3.8vw, 2.6rem); line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 0.9rem; }
     .section-sub { color: var(--text-muted); font-size: 0.97rem; line-height: 1.65; max-width: 540px; }
-
-    /* PRODUCTS */
     #products { background: var(--bg2); }
     .products-header { text-align: center; margin-bottom: 3.5rem; }
     .products-header .section-sub { margin: 0 auto; }
     .cat-header { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); padding: 0.5rem 0 1.25rem; display: flex; align-items: center; gap: 1rem; }
     .cat-header::after { content: ''; flex: 1; height: 1px; background: var(--border); }
     .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem; }
-
-    .product-card {
-      background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-      overflow: hidden; transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
-      position: relative; display: flex; flex-direction: column;
-    }
+    .product-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s; position: relative; display: flex; flex-direction: column; }
     .product-card:hover { border-color: var(--border-glow); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(107,63,160,0.18); }
     .product-card.sold-out { opacity: 0.5; pointer-events: none; }
-
-    .product-image-wrap {
-      width: 100%; aspect-ratio: 16/9; overflow: hidden;
-      background: linear-gradient(135deg, var(--bg3) 0%, #1a0f2e 100%);
-      display: flex; align-items: center; justify-content: center;
-      position: relative;
-    }
+    .product-image-wrap { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: linear-gradient(135deg, var(--bg3) 0%, #1a0f2e 100%); display: flex; align-items: center; justify-content: center; position: relative; }
     .product-image-wrap svg { width: 80%; max-width: 200px; height: auto; }
-
     .product-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; }
     .sold-out-tag { position: absolute; top: 0.75rem; right: 0.75rem; font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(224,92,138,0.18); color: var(--pink); border: 1px solid rgba(224,92,138,0.3); padding: 0.2rem 0.55rem; border-radius: 4px; z-index: 2; font-weight: 700; }
     .product-category { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: var(--blue-light); margin-bottom: 0.3rem; }
@@ -180,16 +142,12 @@
     .tag.blue { background: rgba(46,134,171,0.15); color: var(--blue-light); border-color: rgba(46,134,171,0.3); }
     .tag.pink { background: rgba(224,92,138,0.15); color: var(--pink-light); border-color: rgba(224,92,138,0.3); }
     .tag-group { display: flex; gap: 0.35rem; flex-wrap: wrap; }
-
     .coming-soon-card { background: var(--surface); border: 1px dashed rgba(255,255,255,0.12); border-radius: 16px; padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; text-align: center; min-height: 180px; }
     .coming-soon-card .cs-icon { font-size: 2rem; opacity: 0.4; }
     .coming-soon-card p { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); }
-
     .order-cta-box { background: linear-gradient(135deg, rgba(107,63,160,0.12), rgba(46,134,171,0.08)); border: 1px solid var(--border-glow); border-radius: 16px; padding: 2.5rem; text-align: center; margin-top: 2.5rem; }
     .order-cta-box h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.35rem; margin-bottom: 0.5rem; }
     .order-cta-box p { color: var(--text-muted); font-size: 0.93rem; margin-bottom: 1.5rem; }
-
-    /* ORDER */
     #order { background: var(--bg3); }
     .order-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; }
     .order-info { position: sticky; top: 90px; }
@@ -201,139 +159,51 @@
     .cashapp-badge .ca-icon { font-size: 1.4rem; }
     .cashapp-badge div strong { color: #00D45F; font-family: 'Syne', sans-serif; font-size: 0.92rem; display: block; }
     .cashapp-badge div span { color: var(--text-muted); font-size: 0.78rem; font-family: 'DM Mono', monospace; letter-spacing: 0.04em; }
-    /* NATIVE ORDER FORM */
     .order-form-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
-    .form-section-label {
-      font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--purple-light); display: block; margin-bottom: 1.25rem;
-      padding-bottom: 0.6rem; border-bottom: 1px solid var(--border);
-    }
+    .form-section-label { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--purple-light); display: block; margin-bottom: 1.25rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
     .form-group { margin-bottom: 1.1rem; }
-    .form-group label {
-      display: block; font-family: 'DM Mono', monospace; font-size: 0.7rem;
-      letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted);
-      margin-bottom: 0.4rem;
-    }
+    .form-group label { display: block; font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.4rem; }
     .form-group label .req { color: var(--pink); margin-left: 2px; }
     .form-group label .sublabel { font-size: 0.65rem; color: var(--text-dim); text-transform: none; letter-spacing: 0; font-style: italic; display: block; margin-top: 2px; }
-    .form-input, .form-textarea {
-      width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border);
-      border-radius: 8px; padding: 0.7rem 0.9rem; color: var(--text);
-      font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
-      transition: border-color 0.2s, box-shadow 0.2s; outline: none;
-    }
-    .form-input:focus, .form-textarea:focus {
-      border-color: var(--purple-light); box-shadow: 0 0 0 3px rgba(107,63,160,0.15);
-    }
+    .form-input, .form-textarea { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 0.9rem; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; transition: border-color 0.2s, box-shadow 0.2s; outline: none; }
+    .form-input:focus, .form-textarea:focus { border-color: var(--purple-light); box-shadow: 0 0 0 3px rgba(107,63,160,0.15); }
     .form-input::placeholder, .form-textarea::placeholder { color: var(--text-dim); }
     .form-textarea { resize: vertical; min-height: 80px; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
-
-    /* PRODUCT SELECTION */
     .product-select-grid { display: flex; flex-direction: column; gap: 0.5rem; }
-    .product-select-item {
-      display: flex; align-items: center; gap: 0.85rem;
-      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
-      border-radius: 10px; padding: 0.75rem 1rem; cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .product-select-item:has(input:checked) {
-      border-color: var(--border-glow); background: rgba(107,63,160,0.08);
-    }
-    .product-select-item.sold-out-item {
-      opacity: 0.4; cursor: not-allowed;
-    }
-    .product-select-item input[type="checkbox"] {
-      width: 16px; height: 16px; accent-color: var(--purple); flex-shrink: 0; cursor: pointer;
-    }
+    .product-select-item { display: flex; align-items: center; gap: 0.85rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 0.75rem 1rem; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+    .product-select-item:has(input:checked) { border-color: var(--border-glow); background: rgba(107,63,160,0.08); }
+    .product-select-item.sold-out-item { opacity: 0.4; cursor: not-allowed; }
+    .product-select-item input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--purple); flex-shrink: 0; cursor: pointer; }
     .product-select-item.sold-out-item input[type="checkbox"] { cursor: not-allowed; }
     .psi-info { flex: 1; }
     .psi-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.88rem; color: var(--text); }
     .psi-sku { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: var(--text-dim); }
     .psi-price { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; color: var(--text); flex-shrink: 0; }
-    .psi-sold-out-badge {
-      font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.08em;
-      text-transform: uppercase; background: rgba(224,92,138,0.12);
-      color: var(--pink); border: 1px solid rgba(224,92,138,0.25);
-      padding: 0.15rem 0.4rem; border-radius: 4px; flex-shrink: 0;
-    }
+    .psi-sold-out-badge { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(224,92,138,0.12); color: var(--pink); border: 1px solid rgba(224,92,138,0.25); padding: 0.15rem 0.4rem; border-radius: 4px; flex-shrink: 0; }
     .product-qty-wrap { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.4rem; }
     .product-qty-wrap label { margin: 0; font-size: 0.65rem; white-space: nowrap; }
-    .qty-input {
-      width: 60px; background: rgba(255,255,255,0.05); border: 1px solid var(--border);
-      border-radius: 6px; padding: 0.3rem 0.5rem; color: var(--text);
-      font-family: 'DM Mono', monospace; font-size: 0.8rem; outline: none;
-      transition: border-color 0.2s;
-    }
+    .qty-input { width: 60px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 6px; padding: 0.3rem 0.5rem; color: var(--text); font-family: 'DM Mono', monospace; font-size: 0.8rem; outline: none; transition: border-color 0.2s; }
     .qty-input:focus { border-color: var(--purple-light); }
-
-    /* CAT DIVIDER inside form */
-    .form-cat-header {
-      font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--text-dim);
-      display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; margin-top: 1.5rem;
-    }
+    .form-cat-header { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem; margin-top: 1.5rem; }
     .form-cat-header:first-of-type { margin-top: 0; }
     .form-cat-header::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-
-    /* PAYMENT BOX */
-    .payment-info-box {
-      background: linear-gradient(135deg, rgba(0,212,95,0.05), rgba(0,212,95,0.02));
-      border: 1px solid rgba(0,212,95,0.2); border-radius: 12px;
-      padding: 1.1rem 1.25rem; margin-bottom: 1.1rem;
-    }
-    .payment-info-box .pi-title {
-      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.88rem;
-      color: #00D45F; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;
-    }
-    .payment-info-box p {
-      font-family: 'DM Mono', monospace; font-size: 0.72rem; line-height: 1.65;
-      color: var(--text-muted);
-    }
+    .payment-info-box { background: linear-gradient(135deg, rgba(0,212,95,0.05), rgba(0,212,95,0.02)); border: 1px solid rgba(0,212,95,0.2); border-radius: 12px; padding: 1.1rem 1.25rem; margin-bottom: 1.1rem; }
+    .payment-info-box .pi-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.88rem; color: #00D45F; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+    .payment-info-box p { font-family: 'DM Mono', monospace; font-size: 0.72rem; line-height: 1.65; color: var(--text-muted); }
     .payment-info-box strong { color: var(--text); }
-    .memo-warning {
-      background: rgba(224,92,138,0.07); border: 1px solid rgba(224,92,138,0.2);
-      border-radius: 8px; padding: 0.65rem 0.9rem; margin-top: 0.75rem;
-      font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--pink-light);
-      line-height: 1.55;
-    }
-
-    /* ACKNOWLEDGMENT */
-    .ack-checkbox-wrap {
-      display: flex; align-items: flex-start; gap: 0.75rem;
-      background: rgba(255,255,255,0.03); border: 1px solid var(--border);
-      border-radius: 10px; padding: 1rem;
-    }
-    .ack-checkbox-wrap input[type="checkbox"] {
-      width: 18px; height: 18px; accent-color: var(--purple); flex-shrink: 0; margin-top: 2px; cursor: pointer;
-    }
-    .ack-checkbox-wrap label {
-      font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; cursor: pointer; margin: 0;
-      text-transform: none; letter-spacing: 0; font-family: 'DM Sans', sans-serif;
-    }
+    .ack-checkbox-wrap { display: flex; align-items: flex-start; gap: 0.75rem; background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; }
+    .ack-checkbox-wrap input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--purple); flex-shrink: 0; margin-top: 2px; cursor: pointer; }
+    .ack-checkbox-wrap label { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; cursor: pointer; margin: 0; text-transform: none; letter-spacing: 0; font-family: 'DM Sans', sans-serif; }
     .ack-checkbox-wrap label strong { color: var(--text); font-weight: 500; }
-
-    /* SUBMIT BUTTON */
-    .form-submit-btn {
-      width: 100%; background: var(--purple); color: var(--text);
-      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem;
-      padding: 1rem 2rem; border-radius: 10px; border: none; cursor: pointer;
-      transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
-      margin-top: 1.25rem;
-    }
+    .form-submit-btn { width: 100%; background: var(--purple); color: var(--text); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; padding: 1rem 2rem; border-radius: 10px; border: none; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1.25rem; }
     .form-submit-btn:hover { background: var(--purple-light); box-shadow: 0 0 30px var(--purple-glow); transform: translateY(-2px); }
     .form-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-
-    /* SUCCESS STATE */
-    .form-success {
-      display: none; text-align: center; padding: 3rem 2rem;
-    }
+    .form-success { display: none; text-align: center; padding: 3rem 2rem; }
     .form-success .success-icon { font-size: 3rem; margin-bottom: 1rem; }
     .form-success h3 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.4rem; margin-bottom: 0.75rem; }
     .form-success p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.7; max-width: 480px; margin: 0 auto; }
-
-    /* ABOUT */
     #about { background: var(--bg); }
     .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .about-visual { display: flex; justify-content: center; }
@@ -342,8 +212,6 @@
     @keyframes pulse-glow { 0%,100% { box-shadow: 0 0 40px rgba(107,63,160,0.2); } 50% { box-shadow: 0 0 80px rgba(107,63,160,0.5), 0 0 150px rgba(107,63,160,0.2); } }
     .about-content p { color: var(--text-muted); line-height: 1.75; font-size: 0.96rem; margin-bottom: 1rem; }
     .about-content p strong { color: var(--text); font-weight: 500; }
-
-    /* FAQ */
     #faq { background: var(--bg2); }
     .faq-header { text-align: center; margin-bottom: 3rem; }
     .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; max-width: 920px; margin: 0 auto; }
@@ -355,16 +223,12 @@
     .faq-item.open .faq-arrow { transform: rotate(180deg); }
     .faq-a { display: none; color: var(--text-muted); font-size: 0.87rem; line-height: 1.65; margin-top: 0.85rem; padding-top: 0.85rem; border-top: 1px solid var(--border); }
     .faq-item.open .faq-a { display: block; }
-
-    /* DISCLAIMER */
     #disclaimer { background: var(--bg); }
     .disclaimer-box { background: rgba(224,92,138,0.05); border: 1px solid rgba(224,92,138,0.2); border-radius: 16px; padding: 2.5rem; max-width: 820px; margin: 0 auto; }
     .disclaimer-box h2 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.35rem; margin-bottom: 1.25rem; color: var(--pink-light); }
     .disclaimer-box p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 1rem; }
     .disclaimer-box p:last-child { margin-bottom: 0; }
     .disclaimer-box strong { color: var(--text); }
-
-    /* CONTACT */
     #contact { background: var(--bg3); }
     .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 720px; margin: 2.5rem auto 0; }
     .contact-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; text-align: center; }
@@ -373,8 +237,6 @@
     .contact-item p { color: var(--text-muted); font-size: 0.87rem; line-height: 1.55; margin-bottom: 0.75rem; }
     .contact-item a { color: var(--purple-light); text-decoration: none; font-family: 'DM Mono', monospace; font-size: 0.8rem; transition: color 0.2s; }
     .contact-item a:hover { color: var(--pink-light); }
-
-    /* FOOTER */
     footer { position: relative; z-index: 1; background: var(--bg); border-top: 1px solid var(--border); padding: 2.5rem 2rem; text-align: center; }
     .footer-logo { display: flex; align-items: center; gap: 0.5rem; justify-content: center; margin-bottom: 0.75rem; }
     .footer-logo img { height: 36px; border-radius: 50%; }
@@ -383,12 +245,8 @@
     footer p { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.06em; color: var(--text-dim); line-height: 1.8; }
     footer a { color: var(--text-dim); text-decoration: none; }
     footer a:hover { color: var(--text-muted); }
-
-    /* SCROLL REVEAL */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* MOBILE */
     @media (max-width: 768px) {
       .hero-logo { width: 160px; height: 160px; }
       .hero-title { font-size: 2.2rem; }
@@ -407,11 +265,8 @@
 </head>
 <body>
 <div class="bg-orbs"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
-
-<!-- FLOATING MOLECULES -->
 <div class="molecules" id="molecules"></div>
 
-<!-- NAV -->
 <nav>
   <a href="#home" class="nav-logo">
     <img src="logo.jpg" alt="Professor Corgi" />
@@ -429,30 +284,29 @@
   </div>
 </nav>
 
-<!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
   <a href="#products" onclick="closeMenu()">Products</a>
   <a href="#about" onclick="closeMenu()">About</a>
   <a href="#faq" onclick="closeMenu()">FAQ</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
-  <a href="#order" class="m-cta" onclick="closeMenu()">🚀 Place Order</a>
+  <a href="#order" class="m-cta" onclick="closeMenu()">&#x1F680; Place Order</a>
 </div>
 
 <!-- HERO -->
 <section id="home">
   <div class="hero-inner">
     <img class="hero-logo" src="logo.jpg" alt="Professor Corgi" />
-    <div class="hero-badge">⬡ Research-Grade Peptides & Lab Supplies</div>
-    <h1 class="hero-title">Welcome to the<br/><span class="accent">Laboratory.</span> <span class="pink">🐾</span></h1>
+    <div class="hero-badge">&#x2B21; Research-Grade Peptides &amp; Lab Supplies</div>
+    <h1 class="hero-title">Welcome to the<br/><span class="accent">Laboratory.</span> <span class="pink">&#x1F43E;</span></h1>
     <p class="hero-sub">Professor Corgi's Laboratory supplies high-quality research equipment. Professor-approved prices. Because wellness shouldn't cost an arm and a paw.</p>
     <div class="hero-actions">
-      <a href="#products" class="btn-primary">🔬 Browse Products</a>
-      <a href="#order" class="btn-secondary">Submit Order Request →</a>
+      <a href="#products" class="btn-primary">&#x1F52C; Browse Products</a>
+      <a href="#order" class="btn-secondary">Submit Order Request &rarr;</a>
     </div>
     <div class="hero-stats">
       <div class="stat-item"><span class="stat-num">$<span class="a">10</span></span><span class="stat-label">Flat-Rate Shipping</span></div>
       <div class="stat-item"><span class="stat-num">$<span class="a">150</span></span><span class="stat-label">Free Shipping Over</span></div>
-      <div class="stat-item"><span class="stat-num">M–<span class="a">F</span></span><span class="stat-label">10am–7pm CST</span></div>
+      <div class="stat-item"><span class="stat-num">M&ndash;<span class="a">F</span></span><span class="stat-label">10am&ndash;7pm CST</span></div>
       <div class="stat-item"><span class="stat-num">100<span class="a">%</span></span><span class="stat-label">Research Use Only</span></div>
     </div>
   </div>
@@ -464,14 +318,14 @@
     <div class="products-header reveal">
       <span class="section-label">// The Catalog</span>
       <h2 class="section-title">Research Materials &amp; Equipment</h2>
-      <p class="section-sub">All products are intended strictly for laboratory research purposes only — not for human or veterinary use or consumption.<br/><strong style="color:var(--purple-light);">🧪 All Experiment Files are lyophilized powder for safe transportation.</strong></p>
+      <p class="section-sub">All products are intended strictly for laboratory research purposes only &mdash; not for human or veterinary use or consumption.<br/><strong style="color:var(--purple-light);">&#x1F9EA; All Experiment Files are lyophilized powder for safe transportation.</strong></p>
     </div>
 
-    <!-- ═══ THE EXPERIMENT FILES ═══ -->
-    <div class="cat-header reveal">🧪 &nbsp;The Experiment Files — Peptides</div>
+    <!-- EXPERIMENT FILES -->
+    <div class="cat-header reveal">&#x1F9EA; &nbsp;The Experiment Files &mdash; Peptides</div>
 
     <!-- TWO PAWS PROTOCOL -->
-    <div class="cat-header reveal" style="font-size:0.72rem; font-family:'DM Mono',monospace; font-weight:600; color:var(--blue-light); padding-top:0; padding-bottom:0.75rem; margin-top:-0.5rem;">Two Paws Protocol — GLP-2 Tirzepatide</div>
+    <div class="cat-header reveal" style="font-size:0.72rem;font-family:'DM Mono',monospace;font-weight:600;color:var(--blue-light);padding-top:0;padding-bottom:0.75rem;margin-top:-0.5rem;">Two Paws Protocol &mdash; GLP-2 Tirzepatide</div>
     <div class="product-grid">
 
       <div class="product-card reveal">
@@ -546,7 +400,6 @@
       </div>
 
       <div class="product-card reveal">
-        
         <div class="product-image-wrap">
           <svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
             <defs><linearGradient id="vial1d" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#6B3FA0;stop-opacity:0.7"/><stop offset="100%" style="stop-color:#8B5FC0;stop-opacity:0.95"/></linearGradient></defs>
@@ -572,7 +425,7 @@
     </div>
 
     <!-- THE TRIFECTA -->
-    <div class="cat-header reveal" style="font-size:0.72rem; font-family:'DM Mono',monospace; font-weight:600; color:var(--pink-light); padding-top:0; padding-bottom:0.75rem; margin-top:-0.5rem;">The Trifecta — GLP-3 Retatrutide</div>
+    <div class="cat-header reveal" style="font-size:0.72rem;font-family:'DM Mono',monospace;font-weight:600;color:var(--pink-light);padding-top:0;padding-bottom:0.75rem;margin-top:-0.5rem;">The Trifecta &mdash; GLP-3 Retatrutide</div>
     <div class="product-grid">
 
       <div class="product-card reveal">
@@ -671,8 +524,8 @@
 
     </div>
 
-    <!-- THE SPARK SEQUENCE -->
-    <div class="cat-header reveal" style="font-size:0.72rem; font-family:'DM Mono',monospace; font-weight:600; color:var(--blue-light); padding-top:0; padding-bottom:0.75rem; margin-top:-0.5rem;">The Spark Sequence — MOTS-C</div>
+    <!-- SPARK SEQUENCE -->
+    <div class="cat-header reveal" style="font-size:0.72rem;font-family:'DM Mono',monospace;font-weight:600;color:var(--blue-light);padding-top:0;padding-bottom:0.75rem;margin-top:-0.5rem;">The Spark Sequence &mdash; MOTS-C</div>
     <div class="product-grid">
 
       <div class="product-card reveal">
@@ -700,12 +553,11 @@
 
     </div>
 
-    <!-- THE VOLTAGE VIAL -->
-    <div class="cat-header reveal" style="font-size:0.72rem; font-family:'DM Mono',monospace; font-weight:600; color:var(--text-dim); padding-top:0; padding-bottom:0.75rem; margin-top:-0.5rem;">The Voltage Vial — B-12</div>
+    <!-- VOLTAGE VIAL / B-12 -->
+    <div class="cat-header reveal" style="font-size:0.72rem;font-family:'DM Mono',monospace;font-weight:600;color:var(--text-dim);padding-top:0;padding-bottom:0.75rem;margin-top:-0.5rem;">The Voltage Vial &mdash; B-12</div>
     <div class="product-grid">
 
       <div class="product-card reveal">
-        
         <div class="product-image-wrap">
           <svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
             <defs><linearGradient id="vialB12" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#ff6b35;stop-opacity:0.7"/><stop offset="100%" style="stop-color:#ff8c42;stop-opacity:0.95"/></linearGradient></defs>
@@ -730,11 +582,11 @@
 
     </div>
 
-    <!-- ═══ THE SUPPLY LINE ═══ -->
-    <div class="cat-header reveal" style="margin-top:1.5rem;">🔧 &nbsp;The Supply Line — Equipment &amp; Supplies</div>
+    <!-- SUPPLY LINE -->
+    <div class="cat-header reveal" style="margin-top:1.5rem;">&#x1F527; &nbsp;The Supply Line &mdash; Equipment &amp; Supplies</div>
 
-    <!-- DILUTION SOLUTION -->
-    <div class="cat-header reveal" style="font-size:0.72rem; font-family:'DM Mono',monospace; font-weight:600; color:var(--blue-light); padding-top:0; padding-bottom:0.75rem; margin-top:-0.5rem;">The Dilution Solution — BAC Water</div>
+    <!-- DILUTION SOLUTION / BAC WATER -->
+    <div class="cat-header reveal" style="font-size:0.72rem;font-family:'DM Mono',monospace;font-weight:600;color:var(--blue-light);padding-top:0;padding-bottom:0.75rem;margin-top:-0.5rem;">The Dilution Solution &mdash; BAC Water</div>
     <div class="product-grid">
 
       <div class="product-card reveal">
@@ -761,7 +613,6 @@
       </div>
 
       <div class="product-card reveal">
-        
         <div class="product-image-wrap">
           <svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
             <defs><linearGradient id="bac2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#2E86AB;stop-opacity:0.5"/><stop offset="100%" style="stop-color:#4EAACB;stop-opacity:0.85"/></linearGradient></defs>
@@ -787,12 +638,7 @@
       <div class="product-card reveal">
         <div class="product-image-wrap">
           <svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="bac3" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#2E86AB;stop-opacity:0.45"/>
-                <stop offset="100%" style="stop-color:#4EAACB;stop-opacity:0.75"/>
-              </linearGradient>
-            </defs>
+            <defs><linearGradient id="bac3" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#2E86AB;stop-opacity:0.45"/><stop offset="100%" style="stop-color:#4EAACB;stop-opacity:0.75"/></linearGradient></defs>
             <rect x="87" y="20" width="26" height="8" rx="3" fill="#2E86AB" opacity="0.8"/>
             <rect x="82" y="28" width="36" height="75" rx="6" fill="none" stroke="#2E86AB" stroke-width="1.5" opacity="0.6"/>
             <rect x="83.5" y="28" width="33" height="74" rx="5" fill="url(#bac3)" filter="url(#glow1)"/>
@@ -805,7 +651,7 @@
           <div class="product-category">The Dilution Solution</div>
           <div class="product-name">Hospira BAC Water 30ml</div>
           <div class="product-sku">Solution #BW-030</div>
-          <div class="product-desc">Hospira-brand bacteriostatic water for reconstitution. 30ml vial — ideal for multi-dose research protocols requiring larger volumes.</div>
+          <div class="product-desc">Hospira-brand bacteriostatic water for reconstitution. 30ml vial &mdash; ideal for multi-dose research protocols requiring larger volumes.</div>
           <div class="product-footer">
             <span class="product-price">$30</span>
             <div class="tag-group"><span class="tag blue">30ml</span><span class="tag blue">Hospira</span></div>
@@ -815,8 +661,8 @@
 
     </div>
 
-    <!-- PRECISION POINT -->
-    <div class="cat-header reveal" style="font-size:0.72rem; font-family:'DM Mono',monospace; font-weight:600; color:var(--blue-light); padding-top:0; padding-bottom:0.75rem; margin-top:-0.5rem;">Precision Point — Syringes</div>
+    <!-- PRECISION POINT / SYRINGES -->
+    <div class="cat-header reveal" style="font-size:0.72rem;font-family:'DM Mono',monospace;font-weight:600;color:var(--blue-light);padding-top:0;padding-bottom:0.75rem;margin-top:-0.5rem;">Precision Point &mdash; Syringes</div>
     <div class="product-grid">
 
       <div class="product-card reveal">
@@ -831,7 +677,7 @@
             <line x1="78" y1="58" x2="78" y2="72" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
             <line x1="93" y1="58" x2="93" y2="72" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
             <line x1="108" y1="58" x2="108" y2="72" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-            <text x="100" y="95" text-anchor="middle" fill="rgba(240,234,248,0.6)" font-family="monospace" font-size="8">Solution #N-050 · 0.5ml</text>
+            <text x="100" y="95" text-anchor="middle" fill="rgba(240,234,248,0.6)" font-family="monospace" font-size="8">Solution #N-050 &middot; 0.5ml</text>
           </svg>
         </div>
         <div class="product-body">
@@ -858,7 +704,7 @@
             <line x1="78" y1="58" x2="78" y2="72" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
             <line x1="93" y1="58" x2="93" y2="72" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
             <line x1="108" y1="58" x2="108" y2="72" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-            <text x="100" y="95" text-anchor="middle" fill="rgba(240,234,248,0.6)" font-family="monospace" font-size="8">Solution #N-100 · 1ml</text>
+            <text x="100" y="95" text-anchor="middle" fill="rgba(240,234,248,0.6)" font-family="monospace" font-size="8">Solution #N-100 &middot; 1ml</text>
           </svg>
         </div>
         <div class="product-body">
@@ -875,8 +721,8 @@
 
     </div>
 
-    <!-- SQUEAKY CLEAN -->
-    <div class="cat-header reveal" style="font-size:0.72rem; font-family:'DM Mono',monospace; font-weight:600; color:var(--blue-light); padding-top:0; padding-bottom:0.75rem; margin-top:-0.5rem;">The Squeaky Clean — Prep Pads</div>
+    <!-- SQUEAKY CLEAN / PREP PADS -->
+    <div class="cat-header reveal" style="font-size:0.72rem;font-family:'DM Mono',monospace;font-weight:600;color:var(--blue-light);padding-top:0;padding-bottom:0.75rem;margin-top:-0.5rem;">The Squeaky Clean &mdash; Prep Pads</div>
     <div class="product-grid">
 
       <div class="product-card reveal">
@@ -887,7 +733,7 @@
             <rect x="70" y="40" width="60" height="50" rx="4" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
             <text x="100" y="63" text-anchor="middle" fill="white" font-family="monospace" font-size="8" font-weight="bold" opacity="0.8">SQUEAKY</text>
             <text x="100" y="74" text-anchor="middle" fill="white" font-family="monospace" font-size="8" font-weight="bold" opacity="0.8">CLEAN</text>
-            <text x="100" y="85" text-anchor="middle" fill="rgba(240,234,248,0.5)" font-family="monospace" font-size="7">70% IPA · 10pk</text>
+            <text x="100" y="85" text-anchor="middle" fill="rgba(240,234,248,0.5)" font-family="monospace" font-size="7">70% IPA &middot; 10pk</text>
           </svg>
         </div>
         <div class="product-body">
@@ -904,8 +750,8 @@
 
     </div>
 
-    <!-- ═══ PUP PACKAGES ═══ -->
-    <div class="cat-header reveal" style="margin-top:1.5rem;">🐾 &nbsp;Pup Packages — Starter Bundles</div>
+    <!-- PUP PACKAGES -->
+    <div class="cat-header reveal" style="margin-top:1.5rem;">&#x1F43E; &nbsp;Pup Packages &mdash; Starter Bundles</div>
     <div class="product-grid">
 
       <div class="product-card reveal">
@@ -915,7 +761,7 @@
             <rect x="60" y="30" width="80" height="65" rx="8" fill="url(#pkg1)" filter="url(#glow1)"/>
             <rect x="95" y="22" width="10" height="16" rx="2" fill="#E05C8A" opacity="0.7"/>
             <rect x="85" y="28" width="30" height="4" rx="2" fill="#E05C8A" opacity="0.5"/>
-            <text x="100" y="64" text-anchor="middle" fill="white" font-family="monospace" font-size="9" font-weight="bold" opacity="0.9">🐾 NEW</text>
+            <text x="100" y="64" text-anchor="middle" fill="white" font-family="monospace" font-size="9" font-weight="bold" opacity="0.9">&#x1F43E; NEW</text>
             <text x="100" y="76" text-anchor="middle" fill="white" font-family="monospace" font-size="9" font-weight="bold" opacity="0.9">PUP</text>
           </svg>
         </div>
@@ -932,14 +778,13 @@
       </div>
 
       <div class="product-card reveal">
-        
         <div class="product-image-wrap">
           <svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
             <defs><linearGradient id="pkg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#E05C8A;stop-opacity:0.4"/><stop offset="100%" style="stop-color:#6B3FA0;stop-opacity:0.65"/></linearGradient></defs>
-            <rect x="60" y="30" width="80" height="65" rx="8" fill="url(#pkg2)"/>
+            <rect x="60" y="30" width="80" height="65" rx="8" fill="url(#pkg2)" filter="url(#glow1)"/>
             <rect x="95" y="22" width="10" height="16" rx="2" fill="#E05C8A" opacity="0.8"/>
             <rect x="85" y="28" width="30" height="4" rx="2" fill="#E05C8A" opacity="0.6"/>
-            <text x="100" y="64" text-anchor="middle" fill="white" font-family="monospace" font-size="9" font-weight="bold" opacity="0.95">🐾 PRO</text>
+            <text x="100" y="64" text-anchor="middle" fill="white" font-family="monospace" font-size="9" font-weight="bold" opacity="0.95">&#x1F43E; PRO</text>
             <text x="100" y="76" text-anchor="middle" fill="white" font-family="monospace" font-size="9" font-weight="bold" opacity="0.95">PUP</text>
           </svg>
         </div>
@@ -957,18 +802,19 @@
 
     </div>
 
-    <div class="coming-soon-card reveal" style="margin-bottom: 2.5rem;">
-      <div class="cs-icon">⚗️</div>
-      <p>More products &amp; options coming soon<br/>Check back regularly — the lab is always cooking 🐾</p>
+    <div class="coming-soon-card reveal" style="margin-bottom:2.5rem;">
+      <div class="cs-icon">&#x2697;&#xFE0F;</div>
+      <p>More products &amp; options coming soon<br/>Check back regularly &mdash; the lab is always cooking &#x1F43E;</p>
     </div>
 
     <div class="order-cta-box reveal">
       <h3>Ready to submit a request?</h3>
-      <p>Orders reviewed Monday–Friday, 10am–7pm CST. Shipping $10 flat — free on orders $150+.</p>
-      <a href="#order" class="btn-primary">🚀 Submit Order Request</a>
+      <p>Orders reviewed Monday&ndash;Friday, 10am&ndash;7pm CST. Shipping $10 flat &mdash; free on orders $150+.</p>
+      <a href="#order" class="btn-primary">&#x1F680; Submit Order Request</a>
     </div>
   </div>
 </section>
+
 <!-- ORDER -->
 <section id="order">
   <div class="container">
@@ -978,37 +824,32 @@
         <h2 class="section-title">Send It to the Lab</h2>
         <p style="color:var(--text-muted);font-size:0.92rem;line-height:1.65;margin-bottom:0.5rem;">Fill out the form and Professor Corgi will review your order personally.</p>
         <div class="cashapp-badge">
-          <span class="ca-icon">🔒</span>
+          <span class="ca-icon">&#x1F512;</span>
           <div>
-            <strong>CashApp Only — No Fees Passed to You</strong>
+            <strong>CashApp Only &mdash; No Fees Passed to You</strong>
             <span>Full payment instructions sent securely in your order confirmation email</span>
           </div>
         </div>
-        <div class="order-detail"><span class="icon">📦</span><div><strong>Shipping</strong><span>$10 flat rate. <strong style="color:var(--purple-light)">Free shipping on orders $150+.</strong> Insurance available on request.</span></div></div>
-        <div class="order-detail"><span class="icon">💸</span><div><strong>Payment Instructions</strong><span>Complete payment details — including method, handle, and memo rules — will be sent in your order confirmation email. Do not send payment until you receive your invoice.</span></div></div>
-        <div class="order-detail"><span class="icon">📅</span><div><strong>Lab Hours</strong><span>Mon–Fri, 10am–7pm CST. Orders outside hours reviewed next business day.</span></div></div>
-        <div class="order-detail"><span class="icon">📧</span><div><strong>Large Orders</strong><span>Need more than listed? Email <a href="/cdn-cgi/l/email-protection#2c7c5e434a495f5f435e6f435e4b455f604d4e6c4b414d4540024f4341" style="color:var(--purple-light)"><span class="__cf_email__" data-cfemail="dc8caeb3bab9afafb3ae9fb3aebbb5af90bdbe9cbbb1bdb5b0f2bfb3b1">[email&#160;protected]</span></a> to discuss availability and pricing.</span></div></div>
+        <div class="order-detail"><span class="icon">&#x1F4E6;</span><div><strong>Shipping</strong><span>$10 flat rate. <strong style="color:var(--purple-light)">Free shipping on orders $150+.</strong> Insurance available on request.</span></div></div>
+        <div class="order-detail"><span class="icon">&#x1F4B8;</span><div><strong>Payment Instructions</strong><span>Complete payment details &mdash; including method, handle, and memo rules &mdash; will be sent in your order confirmation email. Do not send payment until you receive your invoice.</span></div></div>
+        <div class="order-detail"><span class="icon">&#x1F4C5;</span><div><strong>Lab Hours</strong><span>Mon&ndash;Fri, 10am&ndash;7pm CST. Orders outside hours reviewed next business day.</span></div></div>
+        <div class="order-detail"><span class="icon">&#x1F4E7;</span><div><strong>Large Orders</strong><span>Need more than listed? Email <a href="mailto:ProfessorCorgisLab@gmail.com" style="color:var(--purple-light)">ProfessorCorgisLab@gmail.com</a> to discuss availability and pricing.</span></div></div>
       </div>
-      <div class="order-form-wrap reveal">
 
-        <!-- SUCCESS STATE -->
+      <div class="order-form-wrap reveal">
         <div class="form-success" id="formSuccess">
-          <div class="success-icon">🐾</div>
+          <div class="success-icon">&#x1F43E;</div>
           <h3>Order Received, Researcher!</h3>
           <p>Professor Corgi has your order and is suiting up in the lab coat now.<br/><br/>
           <strong>Next steps:</strong><br/>
-          Watch for your order confirmation email — it will include full payment instructions and your invoice.<br/>
+          Watch for your order confirmation email &mdash; it will include full payment instructions and your invoice.<br/>
           You'll receive it within 1 business day.<br/><br/>
-          Questions? <a href="/cdn-cgi/l/email-protection#ebbb99848d8e98988499a884998c8298a78a89ab8c868a8287c5888486" style="color:var(--purple-light)"><span class="__cf_email__" data-cfemail="3161435e575442425e43725e435658427d505371565c50585d1f525e5c">[email&#160;protected]</span></a><br/>
-          Hours: Mon–Fri, 10am–7pm CST</p>
+          Questions? <a href="mailto:ProfessorCorgisLab@gmail.com" style="color:var(--purple-light)">ProfessorCorgisLab@gmail.com</a><br/>
+          Hours: Mon&ndash;Fri, 10am&ndash;7pm CST</p>
         </div>
 
-        <!-- ORDER FORM -->
         <form id="orderForm" action="https://formspree.io/f/xlgpwbby" method="POST">
-
-          <!-- CUSTOMER INFO -->
           <span class="form-section-label">// Researcher Info</span>
-
           <div class="form-row">
             <div class="form-group">
               <label>Full Name <span class="req">*</span></label>
@@ -1016,53 +857,49 @@
             </div>
             <div class="form-group">
               <label>Email Address <span class="req">*</span>
-                <span class="sublabel">Where we'll send your lab results 🔬</span>
+                <span class="sublabel">Where we'll send your lab results &#x1F52C;</span>
               </label>
               <input class="form-input" type="email" name="email" placeholder="you@example.com" required />
             </div>
           </div>
-
           <div class="form-group">
             <label>Phone Number
-              <span class="sublabel">Optional — only used if we need to reach you about your order</span>
+              <span class="sublabel">Optional &mdash; only used if we need to reach you about your order</span>
             </label>
             <input class="form-input" type="tel" name="phone" placeholder="Optional" />
           </div>
-
           <div class="form-group">
             <label>Shipping Address <span class="req">*</span>
-              <span class="sublabel">Full address — Street, City, State, ZIP</span>
+              <span class="sublabel">Full address &mdash; Street, City, State, ZIP</span>
             </label>
             <textarea class="form-textarea" name="shipping_address" placeholder="123 Lab Lane, Austin, TX 78701" rows="3" required></textarea>
           </div>
 
-          <!-- PRODUCT SELECTIONS -->
           <span class="form-section-label" style="margin-top:1.5rem;">// Select Your Options</span>
 
-          <!-- ── EXPERIMENT FILES ── -->
-          <div class="form-cat-header" style="font-size:0.8rem; color:var(--purple-light);">🧪 &nbsp;The Experiment Files — Peptides</div>
+          <!-- EXPERIMENT FILES -->
+          <div class="form-cat-header" style="font-size:0.8rem;color:var(--purple-light);">&#x1F9EA; &nbsp;The Experiment Files &mdash; Peptides</div>
 
-          <!-- TWO PAWS PROTOCOL -->
-          <div class="form-cat-header" style="font-size:0.68rem; margin-top:0; padding-top:0; color:var(--blue-light);">Two Paws Protocol — Tirzepatide</div>
+          <div class="form-cat-header" style="font-size:0.68rem;margin-top:0;padding-top:0;color:var(--blue-light);">Two Paws Protocol &mdash; Tirzepatide</div>
           <div class="product-select-grid">
             <label class="product-select-item">
-              <input type="checkbox" name="products" value="Tirzepatide 20mg | Formula #T-020 — $50" />
+              <input type="checkbox" name="products" value="Tirzepatide 20mg | Formula #T-020 &mdash; $50" />
               <div class="psi-info"><div class="psi-name">Tirzepatide 20mg</div><div class="psi-sku">Formula #T-020</div></div>
               <div class="psi-price">$50</div>
             </label>
             <label class="product-select-item">
-              <input type="checkbox" name="products" value="Tirzepatide 30mg | Formula #T-030 — $65" />
+              <input type="checkbox" name="products" value="Tirzepatide 30mg | Formula #T-030 &mdash; $65" />
               <div class="psi-info"><div class="psi-name">Tirzepatide 30mg</div><div class="psi-sku">Formula #T-030</div></div>
               <div class="psi-price">$65</div>
             </label>
             <label class="product-select-item sold-out-item">
-              <input type="checkbox" name="products" value="Tirzepatide 40mg | Formula #T-040 — $80 [SOLD OUT]" disabled />
+              <input type="checkbox" name="products" value="Tirzepatide 40mg | Formula #T-040 &mdash; $80 [SOLD OUT]" disabled />
               <div class="psi-info"><div class="psi-name">Tirzepatide 40mg</div><div class="psi-sku">Formula #T-040</div></div>
               <div class="psi-price">$80</div>
               <span class="psi-sold-out-badge">Sold Out</span>
             </label>
             <label class="product-select-item">
-              <input type="checkbox" name="products" value="Tirzepatide 60mg | Formula #T-060 — $110" />
+              <input type="checkbox" name="products" value="Tirzepatide 60mg | Formula #T-060 &mdash; $110" />
               <div class="psi-info"><div class="psi-name">Tirzepatide 60mg</div><div class="psi-sku">Formula #T-060</div></div>
               <div class="psi-price">$110</div>
             </label>
@@ -1074,27 +911,26 @@
             </div>
           </div>
 
-          <!-- THE TRIFECTA -->
-          <div class="form-cat-header" style="font-size:0.68rem; color:var(--pink-light);">The Trifecta — Retatrutide</div>
+          <div class="form-cat-header" style="font-size:0.68rem;color:var(--pink-light);">The Trifecta &mdash; Retatrutide</div>
           <div class="product-select-grid">
             <label class="product-select-item">
-              <input type="checkbox" name="products" value="Retatrutide 10mg | Formula #R-010 — $65" />
+              <input type="checkbox" name="products" value="Retatrutide 10mg | Formula #R-010 &mdash; $65" />
               <div class="psi-info"><div class="psi-name">Retatrutide 10mg</div><div class="psi-sku">Formula #R-010</div></div>
               <div class="psi-price">$65</div>
             </label>
             <label class="product-select-item">
-              <input type="checkbox" name="products" value="Retatrutide 20mg | Formula #R-020 — $90" />
+              <input type="checkbox" name="products" value="Retatrutide 20mg | Formula #R-020 &mdash; $90" />
               <div class="psi-info"><div class="psi-name">Retatrutide 20mg</div><div class="psi-sku">Formula #R-020</div></div>
               <div class="psi-price">$90</div>
             </label>
             <label class="product-select-item sold-out-item">
-              <input type="checkbox" name="products" value="Retatrutide 30mg | Formula #R-030 — $115 [SOLD OUT]" disabled />
+              <input type="checkbox" name="products" value="Retatrutide 30mg | Formula #R-030 &mdash; $115 [SOLD OUT]" disabled />
               <div class="psi-info"><div class="psi-name">Retatrutide 30mg</div><div class="psi-sku">Formula #R-030</div></div>
               <div class="psi-price">$115</div>
               <span class="psi-sold-out-badge">Sold Out</span>
             </label>
             <label class="product-select-item sold-out-item">
-              <input type="checkbox" name="products" value="Retatrutide 40mg | Formula #R-040 — $140 [SOLD OUT]" disabled />
+              <input type="checkbox" name="products" value="Retatrutide 40mg | Formula #R-040 &mdash; $140 [SOLD OUT]" disabled />
               <div class="psi-info"><div class="psi-name">Retatrutide 40mg</div><div class="psi-sku">Formula #R-040</div></div>
               <div class="psi-price">$140</div>
               <span class="psi-sold-out-badge">Sold Out</span>
@@ -1107,11 +943,10 @@
             </div>
           </div>
 
-          <!-- THE SPARK SEQUENCE -->
-          <div class="form-cat-header" style="font-size:0.68rem; color:var(--blue-light);">The Spark Sequence — MOTS-C</div>
+          <div class="form-cat-header" style="font-size:0.68rem;color:var(--blue-light);">The Spark Sequence &mdash; MOTS-C</div>
           <div class="product-select-grid">
             <label class="product-select-item">
-              <input type="checkbox" name="products" value="MOTS-C 10mg | Formula #MS-010 — $45" />
+              <input type="checkbox" name="products" value="MOTS-C 10mg | Formula #MS-010 &mdash; $45" />
               <div class="psi-info"><div class="psi-name">MOTS-C 10mg</div><div class="psi-sku">Formula #MS-010</div></div>
               <div class="psi-price">$45</div>
             </label>
@@ -1123,16 +958,14 @@
             </div>
           </div>
 
-          <!-- THE VOLTAGE VIAL -->
-          <div class="form-cat-header" style="font-size:0.68rem; color:var(--text-muted);">The Voltage Vial — B-12</div>
+          <div class="form-cat-header" style="font-size:0.68rem;color:var(--text-muted);">The Voltage Vial &mdash; B-12</div>
           <div class="product-select-grid">
             <label class="product-select-item">
-              <input type="checkbox" name="products" value="B-12 10mg Lyophilized | Formula #B12-010 — $15" />
+              <input type="checkbox" name="products" value="B-12 10mg Lyophilized | Formula #B12-010 &mdash; $15" />
               <div class="psi-info"><div class="psi-name">B-12 10mg Lyophilized</div><div class="psi-sku">Formula #B12-010</div></div>
               <div class="psi-price">$15</div>
             </label>
           </div>
-
           <div class="form-group" style="margin-top:0.6rem;">
             <div class="product-qty-wrap">
               <label>B-12 Qty:</label>
@@ -1140,25 +973,24 @@
             </div>
           </div>
 
-          <!-- ── SUPPLY LINE ── -->
-          <div class="form-cat-header" style="font-size:0.8rem; color:var(--purple-light); margin-top:1rem;">🔧 &nbsp;The Supply Line — Equipment &amp; Supplies</div>
+          <!-- SUPPLY LINE -->
+          <div class="form-cat-header" style="font-size:0.8rem;color:var(--purple-light);margin-top:1rem;">&#x1F527; &nbsp;The Supply Line &mdash; Equipment &amp; Supplies</div>
 
-          <!-- DILUTION SOLUTION -->
-          <div class="form-cat-header" style="font-size:0.68rem; color:var(--blue-light); margin-top:0; padding-top:0;">The Dilution Solution — BAC Water</div>
+          <div class="form-cat-header" style="font-size:0.68rem;color:var(--blue-light);margin-top:0;padding-top:0;">The Dilution Solution &mdash; BAC Water</div>
           <div class="product-select-grid">
             <label class="product-select-item">
-              <input type="checkbox" name="products" value="BAC Water 3ml | Solution #BW-003 — $8" />
+              <input type="checkbox" name="products" value="BAC Water 3ml | Solution #BW-003 &mdash; $8" />
               <div class="psi-info"><div class="psi-name">BAC Water 3ml</div><div class="psi-sku">Solution #BW-003</div></div>
               <div class="psi-price">$8</div>
             </label>
             <label class="product-select-item">
-              <input type="checkbox" name="products" value="BAC Water 10ml | Solution #BW-010 — $15" />
+              <input type="checkbox" name="products" value="BAC Water 10ml | Solution #BW-010 &mdash; $15" />
               <div class="psi-info"><div class="psi-name">BAC Water 10ml</div><div class="psi-sku">Solution #BW-010</div></div>
               <div class="psi-price">$15</div>
             </label>
             <label class="product-select-item">
-              <input type="checkbox" name="products" value="Hospira BAC Water 30ml | Solution #BW-030 — $30" />
-              <div class="psi-info"><div class="psi-name">Hospira BAC Water 30ml</div><div class="psi-sku">Solution #BW-030 · Hospira Brand</div></div>
+              <input type="checkbox" name="products" value="Hospira BAC Water 30ml | Solution #BW-030 &mdash; $30" />
+              <div class="psi-info"><div class="psi-name">Hospira BAC Water 30ml</div><div class="psi-sku">Solution #BW-030 &middot; Hospira Brand</div></div>
               <div class="psi-price">$30</div>
             </label>
           </div>
@@ -1169,17 +1001,16 @@
             </div>
           </div>
 
-          <!-- PRECISION POINT -->
-          <div class="form-cat-header" style="font-size:0.68rem; color:var(--blue-light);">Precision Point — Syringes ($8 / 10-pack)</div>
+          <div class="form-cat-header" style="font-size:0.68rem;color:var(--blue-light);">Precision Point &mdash; Syringes ($8 / 10-pack)</div>
           <div class="product-select-grid">
             <label class="product-select-item">
-              <input type="checkbox" name="products" value="0.5ml Syringes x10 | Solution #N-050 — $8" />
-              <div class="psi-info"><div class="psi-name">0.5ml Syringes</div><div class="psi-sku">Solution #N-050 · 10-pack</div></div>
+              <input type="checkbox" name="products" value="0.5ml Syringes x10 | Solution #N-050 &mdash; $8" />
+              <div class="psi-info"><div class="psi-name">0.5ml Syringes</div><div class="psi-sku">Solution #N-050 &middot; 10-pack</div></div>
               <div class="psi-price">$8</div>
             </label>
             <label class="product-select-item">
-              <input type="checkbox" name="products" value="1ml Syringes x10 | Solution #N-100 — $8" />
-              <div class="psi-info"><div class="psi-name">1ml Syringes</div><div class="psi-sku">Solution #N-100 · 10-pack</div></div>
+              <input type="checkbox" name="products" value="1ml Syringes x10 | Solution #N-100 &mdash; $8" />
+              <div class="psi-info"><div class="psi-name">1ml Syringes</div><div class="psi-sku">Solution #N-100 &middot; 10-pack</div></div>
               <div class="psi-price">$8</div>
             </label>
           </div>
@@ -1190,11 +1021,10 @@
             </div>
           </div>
 
-          <!-- SQUEAKY CLEAN -->
-          <div class="form-cat-header" style="font-size:0.68rem; color:var(--blue-light);">The Squeaky Clean — Alcohol Prep Pads</div>
+          <div class="form-cat-header" style="font-size:0.68rem;color:var(--blue-light);">The Squeaky Clean &mdash; Alcohol Prep Pads</div>
           <div class="product-select-grid">
             <label class="product-select-item">
-              <input type="checkbox" name="products" value="Alcohol Prep Pads x10 | Solution #AP-001 — $3" />
+              <input type="checkbox" name="products" value="Alcohol Prep Pads x10 | Solution #AP-001 &mdash; $3" />
               <div class="psi-info"><div class="psi-name">Alcohol Prep Pads x10</div><div class="psi-sku">Solution #AP-001</div></div>
               <div class="psi-price">$3</div>
             </label>
@@ -1207,67 +1037,65 @@
           </div>
 
           <!-- PUP PACKAGES -->
-          <div class="form-cat-header" style="font-size:0.8rem; color:var(--pink-light); margin-top:1rem;">🐾 &nbsp;Pup Packages — Starter Bundles</div>
+          <div class="form-cat-header" style="font-size:0.8rem;color:var(--pink-light);margin-top:1rem;">&#x1F43E; &nbsp;Pup Packages &mdash; Starter Bundles</div>
           <div class="product-select-grid">
             <label class="product-select-item">
-              <input type="checkbox" name="products" value="New Pup Pack | KIT #NP-001 — $14 (BAC 3ml + 0.5ml syringes x10 + 20x pads)" />
+              <input type="checkbox" name="products" value="New Pup Pack | KIT #NP-001 &mdash; $14 (BAC 3ml + 0.5ml syringes x10 + 20x pads)" />
               <div class="psi-info">
                 <div class="psi-name">New Pup Pack</div>
-                <div class="psi-sku">KIT #NP-001 · BAC 3ml + 0.5ml syringes + 20x pads</div>
+                <div class="psi-sku">KIT #NP-001 &middot; BAC 3ml + 0.5ml syringes + 20x pads</div>
               </div>
               <div class="psi-price">$14</div>
             </label>
             <label class="product-select-item">
-              <input type="checkbox" name="products" value="Pro Pup Pack | KIT #PP-001 — $22" />
+              <input type="checkbox" name="products" value="Pro Pup Pack | KIT #PP-001 &mdash; $22 (BAC 10ml + 1ml syringes x10 + 20x pads)" />
               <div class="psi-info">
                 <div class="psi-name">Pro Pup Pack</div>
-                <div class="psi-sku">KIT #PP-001 · BAC 10ml + 1ml syringes + 20x pads</div>
+                <div class="psi-sku">KIT #PP-001 &middot; BAC 10ml + 1ml syringes + 20x pads</div>
               </div>
               <div class="psi-price">$22</div>
             </label>
           </div>
 
-          <!-- REFERRAL CODE -->
           <div class="form-group" style="margin-top:1.5rem;">
             <label>Referral Code
-              <span class="sublabel">Optional — enter a referral code if you have one</span>
+              <span class="sublabel">Optional &mdash; enter a referral code if you have one</span>
             </label>
             <input class="form-input" type="text" name="referral_code" placeholder="Optional" />
           </div>
 
-          <!-- ORDER NOTES -->
-          <div class="form-group" style="margin-top:1.5rem;">
+          <div class="form-group" style="margin-top:1rem;">
             <label>Order Notes
               <span class="sublabel">Anything special about your order? Substitutions, questions, or requests.</span>
             </label>
             <textarea class="form-textarea" name="notes" placeholder="Optional" rows="3"></textarea>
           </div>
 
-          <!-- PAYMENT INFO -->
+          <!-- PAYMENT -->
           <div class="payment-info-box">
-            <div class="pi-title">💚 Payment — CashApp Only</div>
+            <div class="pi-title">&#x1F49A; Payment &mdash; CashApp Only</div>
             <p>
-              <strong>Only CashApp is accepted at this time.</strong> To keep prices as low as possible and avoid passing additional processing fees on to you, we exclusively use CashApp — no credit cards, Venmo, Zelle, or PayPal.<br/><br/>
-              Complete CashApp payment details — handle, amount, and memo instructions — will be included in your <strong>secure order invoice sent via email</strong> after your request is received and reviewed.<br/><br/>
-              📦 Shipping: <strong>$10 flat.</strong> Free on orders <strong>$150+.</strong><br/>
-              🛡️ Insurance available on request after order is received.
+              <strong>Only CashApp is accepted at this time.</strong> To keep prices as low as possible and avoid passing additional processing fees on to you, we exclusively use CashApp &mdash; no credit cards, Venmo, Zelle, or PayPal.<br/><br/>
+              Complete CashApp payment details &mdash; handle, amount, and memo instructions &mdash; will be included in your <strong>secure order invoice sent via email</strong> after your request is received and reviewed.<br/><br/>
+              &#x1F4E6; Shipping: <strong>$10 flat.</strong> Free on orders <strong>$150+.</strong><br/>
+              &#x1F6E1;&#xFE0F; Insurance available on request after order is received.
             </p>
           </div>
 
           <!-- SPECIAL REQUESTS -->
-          <div class="order-detail" style="margin-bottom:1.1rem; border-radius:10px; background:rgba(107,63,160,0.07); border-color:rgba(107,63,160,0.25);">
-            <span class="icon">🔬</span>
+          <div class="order-detail" style="margin-bottom:1.1rem;border-radius:10px;background:rgba(107,63,160,0.07);border-color:rgba(107,63,160,0.25);">
+            <span class="icon">&#x1F52C;</span>
             <div>
               <strong>Need Something Not Listed?</strong>
-              <span>Have a special request, custom quantity, or looking for a product not yet in the catalog? Professor Corgi is always open to a conversation — email <a href="mailto:ProfessorCorgisLab@gmail.com" style="color:var(--purple-light)">ProfessorCorgisLab@gmail.com</a> to discuss options and availability.</span>
+              <span>Have a special request, custom quantity, or looking for a product not yet in the catalog? Professor Corgi is always open to a conversation &mdash; email <a href="mailto:ProfessorCorgisLab@gmail.com" style="color:var(--purple-light)">ProfessorCorgisLab@gmail.com</a> to discuss options and availability.</span>
             </div>
           </div>
 
-          <!-- MEMO RULE CHECKBOX -->
-          <div class="ack-checkbox-wrap" style="border-color: rgba(107,63,160,0.4); background: rgba(107,63,160,0.06); margin-bottom: 1rem;">
+          <!-- MEMO RULE -->
+          <div class="ack-checkbox-wrap" style="border-color:rgba(107,63,160,0.4);background:rgba(107,63,160,0.06);margin-bottom:1rem;">
             <input type="checkbox" id="memoCheck" name="memo_acknowledged" value="yes" required />
             <label for="memoCheck">
-              ⚠️ <strong>I understand the Memo Rule:</strong> When sending payment, I will include <strong>only my last name and/or order email</strong> in the memo/note field. Any additional text, incorrect memo, or wrong payment method will result in <strong>immediate order cancellation and a ban from future orders.</strong> No exceptions.
+              &#x26A0;&#xFE0F; <strong>I understand the Memo Rule:</strong> When sending payment, I will include <strong>only my last name and/or order email</strong> in the memo/note field. Any additional text, incorrect memo, or wrong payment method will result in <strong>immediate order cancellation and a ban from future orders.</strong> No exceptions.
             </label>
           </div>
 
@@ -1275,18 +1103,16 @@
           <div class="ack-checkbox-wrap">
             <input type="checkbox" id="ackCheck" name="acknowledged" value="yes" required />
             <label for="ackCheck">
-              ✅ I confirm: <strong>(1)</strong> I am 18 or older. <strong>(2)</strong> This order is for legitimate research purposes only. <strong>(3)</strong> I understand full payment instructions will be provided in my order confirmation email, and I will follow them exactly. <strong>(4)</strong> I understand sold-out items cannot be fulfilled. <strong>(5)</strong> Professor Corgi's Laboratory is not responsible for misuse of research samples.
+              &#x2705; I confirm: <strong>(1)</strong> I am 18 or older. <strong>(2)</strong> This order is for legitimate research purposes only. <strong>(3)</strong> I understand full payment instructions will be provided in my order confirmation email, and I will follow them exactly. <strong>(4)</strong> I understand sold-out items cannot be fulfilled. <strong>(5)</strong> Professor Corgi's Laboratory is not responsible for misuse of research samples.
             </label>
           </div>
 
-          <!-- HIDDEN FIELDS FOR FORMSPREE -->
-          <input type="hidden" name="_subject" value="🧪 New Order — Professor Corgi's Laboratory" />
+          <input type="hidden" name="_subject" value="&#x1F9EA; New Order &mdash; Professor Corgi's Laboratory" />
           <input type="text" name="_gotcha" style="display:none" />
 
           <button type="submit" class="form-submit-btn" id="submitBtn">
-            🧪 Submit My Order Request
+            &#x1F9EA; Submit My Order Request
           </button>
-
         </form>
       </div>
     </div>
@@ -1305,10 +1131,10 @@
       <div class="about-content reveal">
         <span class="section-label">// About the Lab</span>
         <h2 class="section-title">Science is serious.<br/>We just make it fun.</h2>
-        <p>Professor Corgi's Laboratory was founded on a simple belief: researchers deserve <strong>quality supplies, real communication, and fair prices</strong> — without the corporate runaround.</p>
+        <p>Professor Corgi's Laboratory was founded on a simple belief: researchers deserve <strong>quality supplies, real communication, and fair prices</strong> &mdash; without the corporate runaround.</p>
         <p>Every order is reviewed personally. Every question gets a real answer. When you reach out, you're talking to someone who actually cares whether your research goes well.</p>
-        <p>The lab is open <strong>Monday through Friday, 10am to 7pm CST</strong>. Questions outside hours? Send an email — Professor Corgi checks in regularly.</p>
-        <p style="color:var(--text-dim);font-size:0.83rem;font-family:'DM Mono',monospace;margin-top:1.5rem;">🔬 All products for research use only. Not for human or veterinary use.</p>
+        <p>The lab is open <strong>Monday through Friday, 10am to 7pm CST</strong>. Questions outside hours? Send an email &mdash; Professor Corgi checks in regularly.</p>
+        <p style="color:var(--text-dim);font-size:0.83rem;font-family:'DM Mono',monospace;margin-top:1.5rem;">&#x1F52C; All products for research use only. Not for human or veterinary use.</p>
       </div>
     </div>
   </div>
@@ -1323,14 +1149,14 @@
       <p class="section-sub" style="margin:0 auto;">Not here? Email the lab directly.</p>
     </div>
     <div class="faq-grid">
-      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">Are these products for human use? <span class="faq-arrow">▼</span></div><div class="faq-a">No. All products sold by Professor Corgi's Laboratory are strictly for laboratory research purposes only. Not intended for human or veterinary use, consumption, or clinical application.</div></div>
-      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">How do I pay? <span class="faq-arrow">▼</span></div><div class="faq-a">Payment instructions are sent privately via your order confirmation email after your request is received. Do not send payment until you have your invoice. The confirmation will include the payment method, handle, amount, and memo instructions. Follow them exactly — incorrect payment details result in immediate cancellation.</div></div>
-      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">How does shipping work? <span class="faq-arrow">▼</span></div><div class="faq-a">Orders ship via UPS at a <strong>flat rate of $10</strong>. Orders totaling <strong>$120 or more qualify for free shipping.</strong> Most orders process and ship within 1–2 business days after payment confirmation. Additional insurance is available on request.</div></div>
-      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">Can I order larger quantities? <span class="faq-arrow">▼</span></div><div class="faq-a">Yes. The order form handles standard quantities. For larger or custom orders, contact Professor Corgi directly at <a href="/cdn-cgi/l/email-protection#1545677a737066667a67567a67727c66597477557278747c793b767a78" style="color:var(--purple-light)"><span class="__cf_email__" data-cfemail="1f4f6d70797a6c6c706d5c706d78766c537e7d5f78727e7673317c7072">[email&#160;protected]</span></a> to discuss availability and pricing.</div></div>
-      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">What's in the Pup Packs? <span class="faq-arrow">▼</span></div><div class="faq-a"><strong>New Pup Pack ($10):</strong> 1x BAC Water 3ml, 1x 0.5ml syringe 10-pack, 20x prep pads.<br/><br/><strong>Pro Pup Pack ($15):</strong> 1x BAC Water 10ml, 1x 1.0ml syringe 10-pack, 20x prep pads. (Currently sold out — check back soon.)</div></div>
-      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">What are lab hours? <span class="faq-arrow">▼</span></div><div class="faq-a">Mon–Fri, 10am–7pm CST. Orders submitted outside these hours are reviewed the next business day. For urgent matters, email <a href="/cdn-cgi/l/email-protection#97c7e5f8f1f2e4e4f8e5d4f8e5f0fee4dbf6f5d7f0faf6fefbb9f4f8fa" style="color:var(--purple-light)"><span class="__cf_email__" data-cfemail="67371508010214140815240815000e142b060527000a060e0b4904080a">[email&#160;protected]</span></a>.</div></div>
-      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">How will I get my confirmation? <span class="faq-arrow">▼</span></div><div class="faq-a">After submitting your order request, Professor Corgi will send a confirmation email to the address you provided. This will include your full payment instructions, invoice, and order details. Check your spam folder just in case.</div></div>
-      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">What if I mess up the payment memo? <span class="faq-arrow">▼</span></div><div class="faq-a">Incorrect memo or wrong payment method results in immediate order cancellation and a ban from future orders. Re-read the instructions in your confirmation email before sending. When in doubt, only put your last name and/or email in the memo — nothing else.</div></div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">Are these products for human use? <span class="faq-arrow">&#9660;</span></div><div class="faq-a">No. All products sold by Professor Corgi's Laboratory are strictly for laboratory research purposes only. Not intended for human or veterinary use, consumption, or clinical application.</div></div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">How do I pay? <span class="faq-arrow">&#9660;</span></div><div class="faq-a">Payment instructions are sent privately via your order confirmation email after your request is received. Do not send payment until you have your invoice. The confirmation will include the payment method, handle, amount, and memo instructions. Follow them exactly &mdash; incorrect payment details result in immediate cancellation.</div></div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">How does shipping work? <span class="faq-arrow">&#9660;</span></div><div class="faq-a">Orders ship via UPS at a <strong>flat rate of $10</strong>. Orders totaling <strong>$150 or more qualify for free shipping.</strong> Most orders process and ship within 1&ndash;2 business days after payment confirmation. Additional insurance is available on request.</div></div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">Can I order larger quantities? <span class="faq-arrow">&#9660;</span></div><div class="faq-a">Yes. The order form handles standard quantities. For larger or custom orders, contact Professor Corgi directly at <a href="mailto:ProfessorCorgisLab@gmail.com" style="color:var(--purple-light)">ProfessorCorgisLab@gmail.com</a> to discuss availability and pricing.</div></div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">What's in the Pup Packs? <span class="faq-arrow">&#9660;</span></div><div class="faq-a"><strong>New Pup Pack ($14):</strong> 1x BAC Water 3ml, 1x 0.5ml syringe 10-pack, 20x prep pads.<br/><br/><strong>Pro Pup Pack ($22):</strong> 1x BAC Water 10ml, 1x 1.0ml syringe 10-pack, 20x prep pads.</div></div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">What are lab hours? <span class="faq-arrow">&#9660;</span></div><div class="faq-a">Mon&ndash;Fri, 10am&ndash;7pm CST. Orders submitted outside these hours are reviewed the next business day. For urgent matters, email <a href="mailto:ProfessorCorgisLab@gmail.com" style="color:var(--purple-light)">ProfessorCorgisLab@gmail.com</a>.</div></div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">How will I get my confirmation? <span class="faq-arrow">&#9660;</span></div><div class="faq-a">After submitting your order request, Professor Corgi will send a confirmation email to the address you provided. This will include your full payment instructions, invoice, and order details. Check your spam folder just in case.</div></div>
+      <div class="faq-item reveal" onclick="toggleFaq(this)"><div class="faq-q">What if I mess up the payment memo? <span class="faq-arrow">&#9660;</span></div><div class="faq-a">Incorrect memo or wrong payment method results in immediate order cancellation and a ban from future orders. Re-read the instructions in your confirmation email before sending. When in doubt, only put your last name and/or email in the memo &mdash; nothing else.</div></div>
     </div>
   </div>
 </section>
@@ -1339,8 +1165,8 @@
 <section id="disclaimer">
   <div class="container">
     <div class="disclaimer-box reveal">
-      <span style="font-size:2rem;display:block;margin-bottom:1rem;">⚠️</span>
-      <h2>Research Use Only — Legal Disclaimer</h2>
+      <span style="font-size:2rem;display:block;margin-bottom:1rem;">&#x26A0;&#xFE0F;</span>
+      <h2>Research Use Only &mdash; Legal Disclaimer</h2>
       <p><strong>All products sold by Professor Corgi's Laboratory are intended strictly for laboratory and scientific research purposes only.</strong> These products are not approved by the Food and Drug Administration (FDA) for human or veterinary use, consumption, or any clinical, therapeutic, or diagnostic application.</p>
       <p>By placing an order, you confirm that you are a qualified researcher or laboratory professional and that all materials will be used solely for lawful scientific research in a properly equipped facility, in full compliance with all applicable local, state, and federal laws and regulations.</p>
       <p>Professor Corgi's Laboratory makes no representations or warranties regarding the safety, efficacy, or suitability of any product for any purpose. The purchaser assumes full responsibility for proper handling, storage, and use of all research materials.</p>
@@ -1360,16 +1186,16 @@
     </div>
     <div class="contact-layout">
       <div class="contact-item reveal">
-        <span class="c-icon">📧</span>
+        <span class="c-icon">&#x1F4E7;</span>
         <h3>Email the Lab</h3>
         <p>For order questions, large quantities, or anything outside the form.</p>
-        <a href="/cdn-cgi/l/email-protection#2171534e474452524e53624e534648526d404361464c40484d0f424e4c" style="color:var(--purple-light)"><span class="__cf_email__" data-cfemail="de8eacb1b8bbadadb1ac9db1acb9b7ad92bfbc9eb9b3bfb7b2f0bdb1b3">[email&#160;protected]</span></a>
+        <a href="mailto:ProfessorCorgisLab@gmail.com">ProfessorCorgisLab@gmail.com</a>
       </div>
       <div class="contact-item reveal">
-        <span class="c-icon">🕐</span>
+        <span class="c-icon">&#x1F550;</span>
         <h3>Lab Hours</h3>
         <p>Order requests reviewed and processed during these hours.</p>
-        <a>Mon – Fri &nbsp;|&nbsp; 10am – 7pm CST</a>
+        <a>Mon &ndash; Fri &nbsp;|&nbsp; 10am &ndash; 7pm CST</a>
       </div>
     </div>
   </div>
@@ -1383,14 +1209,13 @@
   </div>
   <p>
     All products for research use only. Not for human or veterinary use.<br/>
-    <a href="#disclaimer">Legal Disclaimer</a> &nbsp;·&nbsp;
-    <a href="/cdn-cgi/l/email-protection#3f6f4d50595a4c4c504d7c504d58564c735e5d7f58525e5653115c5052"><span class="__cf_email__" data-cfemail="6c3c1e030a091f1f031e2f031e0b051f200d0e2c0b010d0500420f0301">[email&#160;protected]</span></a><br/>
-    © 2025 Professor Corgi's Laboratory · All Rights Reserved
+    <a href="#disclaimer">Legal Disclaimer</a> &nbsp;&middot;&nbsp;
+    <a href="mailto:ProfessorCorgisLab@gmail.com">ProfessorCorgisLab@gmail.com</a><br/>
+    &copy; 2025 Professor Corgi's Laboratory &middot; All Rights Reserved
   </p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  // FORMSPREE ORDER FORM
+<script>
   const orderForm = document.getElementById('orderForm');
   const submitBtn = document.getElementById('submitBtn');
   const formSuccess = document.getElementById('formSuccess');
@@ -1399,25 +1224,12 @@
     orderForm.addEventListener('submit', async function(e) {
       e.preventDefault();
 
-      // Check at least one product is selected
       const checked = orderForm.querySelectorAll('input[name="products"]:checked');
       if (checked.length === 0) {
         alert('Please select at least one product before submitting.');
         return;
       }
 
-      // Check qty inputs: if ANY product checkbox is checked, at least one qty field in that group must be filled
-      const qtyInputs = orderForm.querySelectorAll('.qty-input');
-      let qtyOk = false;
-      qtyInputs.forEach(function(inp) {
-        if (inp.value && parseInt(inp.value) > 0) qtyOk = true;
-      });
-      if (!qtyOk) {
-        alert('Please enter a quantity (at least 1) in the quantity field for your selected item(s).');
-        return;
-      }
-
-      // Per-group qty check: if a product in a group is checked, the group's qty must be filled
       const groups = [
         { checkboxValues: ['T-020','T-030','T-060'], qtyName: 'qty_tirzz', label: 'Tirzepatide' },
         { checkboxValues: ['R-010','R-020'], qtyName: 'qty_retaa', label: 'Retatrutide' },
@@ -1441,7 +1253,7 @@
       }
 
       submitBtn.disabled = true;
-      submitBtn.textContent = '⏳ Sending to the Lab...';
+      submitBtn.textContent = 'Sending to the Lab...';
 
       const formData = new FormData(orderForm);
 
@@ -1451,19 +1263,18 @@
           body: formData,
           headers: { 'Accept': 'application/json' }
         });
-
         if (response.ok) {
           orderForm.style.display = 'none';
           formSuccess.style.display = 'block';
           formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
           submitBtn.disabled = false;
-          submitBtn.innerHTML = '🧪 Submit My Order Request';
-          alert('Something went wrong sending your order. Please email ProfessorCorgisLab@gmail.com directly.');
+          submitBtn.innerHTML = 'Submit My Order Request';
+          alert('Something went wrong. Please email ProfessorCorgisLab@gmail.com directly.');
         }
       } catch (err) {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = '🧪 Submit My Order Request';
+        submitBtn.innerHTML = 'Submit My Order Request';
         alert('Network error. Please email ProfessorCorgisLab@gmail.com directly.');
       }
     });
@@ -1496,7 +1307,6 @@
       const cx = s / 2, cy = s / 2;
       const type = Math.random() > 0.45 ? 'ring' : 'chain';
       const fid = 'gf' + Math.random().toString(36).slice(2,8);
-
       let shapes = '';
       if (type === 'ring') {
         const pts = [];
@@ -1506,54 +1316,40 @@
         }
         for (let i = 0; i < 6; i++) {
           const n = (i + 1) % 6;
-          shapes += `<line x1="${pts[i][0]}" y1="${pts[i][1]}" x2="${pts[n][0]}" y2="${pts[n][1]}" stroke="${color.stroke}" stroke-width="2.5" filter="url(#${fid})"/>`;
+          shapes += '<line x1="' + pts[i][0] + '" y1="' + pts[i][1] + '" x2="' + pts[n][0] + '" y2="' + pts[n][1] + '" stroke="' + color.stroke + '" stroke-width="2.5" filter="url(#' + fid + ')"/>';
         }
-        pts.forEach(p => {
-          shapes += `<circle cx="${p[0]}" cy="${p[1]}" r="${s*0.06}" fill="${color.stroke}" filter="url(#${fid})"/>`;
+        pts.forEach(function(p) {
+          shapes += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + (s*0.06) + '" fill="' + color.stroke + '" filter="url(#' + fid + ')"/>';
         });
-        shapes += `<circle cx="${cx}" cy="${cy}" r="${r*0.52}" fill="${color.fill}" stroke="${color.stroke}" stroke-width="1" opacity="0.5"/>`;
-        [0,2,4].forEach(i => {
+        shapes += '<circle cx="' + cx + '" cy="' + cy + '" r="' + (r*0.52) + '" fill="' + color.fill + '" stroke="' + color.stroke + '" stroke-width="1" opacity="0.5"/>';
+        [0,2,4].forEach(function(i) {
           const a = (Math.PI / 3) * i - Math.PI / 6;
           const ox = pts[i][0] + r * 0.58 * Math.cos(a);
           const oy = pts[i][1] + r * 0.58 * Math.sin(a);
-          shapes += `<line x1="${pts[i][0]}" y1="${pts[i][1]}" x2="${ox}" y2="${oy}" stroke="${color.stroke}" stroke-width="2" opacity="0.8" filter="url(#${fid})"/>`;
-          shapes += `<circle cx="${ox}" cy="${oy}" r="${s*0.045}" fill="${color.stroke}" opacity="0.9"/>`;
+          shapes += '<line x1="' + pts[i][0] + '" y1="' + pts[i][1] + '" x2="' + ox + '" y2="' + oy + '" stroke="' + color.stroke + '" stroke-width="2" opacity="0.8" filter="url(#' + fid + ')"/>';
+          shapes += '<circle cx="' + ox + '" cy="' + oy + '" r="' + (s*0.045) + '" fill="' + color.stroke + '" opacity="0.9"/>';
         });
       } else {
         const nodes = 4 + Math.floor(Math.random() * 3);
         const pts = [];
         for (let i = 0; i < nodes; i++) {
           const angle = (i % 2 === 0 ? 0.5 : -0.5);
-          pts.push([
-            cx - r * 1.1 + (i / (nodes - 1)) * r * 2.2,
-            cy + angle * r * 0.65
-          ]);
+          pts.push([cx - r * 1.1 + (i / (nodes - 1)) * r * 2.2, cy + angle * r * 0.65]);
         }
         for (let i = 0; i < pts.length - 1; i++) {
-          shapes += `<line x1="${pts[i][0]}" y1="${pts[i][1]}" x2="${pts[i+1][0]}" y2="${pts[i+1][1]}" stroke="${color.stroke}" stroke-width="2.5" filter="url(#${fid})"/>`;
+          shapes += '<line x1="' + pts[i][0] + '" y1="' + pts[i][1] + '" x2="' + pts[i+1][0] + '" y2="' + pts[i+1][1] + '" stroke="' + color.stroke + '" stroke-width="2.5" filter="url(#' + fid + ')"/>';
         }
-        pts.forEach((p, i) => {
+        pts.forEach(function(p, i) {
           const isEnd = i === 0 || i === pts.length - 1;
-          shapes += `<circle cx="${p[0]}" cy="${p[1]}" r="${s*(isEnd?0.07:0.055)}" fill="${color.stroke}" filter="url(#${fid})"/>`;
+          shapes += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + (s*(isEnd?0.07:0.055)) + '" fill="' + color.stroke + '" filter="url(#' + fid + ')"/>';
           if (!isEnd && Math.random() > 0.35) {
             const bx = p[0]; const by = p[1] - r * 0.55;
-            shapes += `<line x1="${p[0]}" y1="${p[1]}" x2="${bx}" y2="${by}" stroke="${color.stroke}" stroke-width="1.8" opacity="0.8"/>`;
-            shapes += `<circle cx="${bx}" cy="${by}" r="${s*0.04}" fill="${color.stroke}" opacity="0.9"/>`;
+            shapes += '<line x1="' + p[0] + '" y1="' + p[1] + '" x2="' + bx + '" y2="' + by + '" stroke="' + color.stroke + '" stroke-width="1.8" opacity="0.8"/>';
+            shapes += '<circle cx="' + bx + '" cy="' + by + '" r="' + (s*0.04) + '" fill="' + color.stroke + '" opacity="0.9"/>';
           }
         });
       }
-
-      return `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 ${s} ${s}">
-        <defs>
-          <filter id="${fid}" x="-80%" y="-80%" width="260%" height="260%">
-            <feGaussianBlur stdDeviation="2.5" result="blur"/>
-            <feFlood flood-color="${color.glow}" result="color"/>
-            <feComposite in="color" in2="blur" operator="in" result="glow"/>
-            <feMerge><feMergeNode in="glow"/><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        ${shapes}
-      </svg>`;
+      return '<svg xmlns="http://www.w3.org/2000/svg" width="' + s + '" height="' + s + '" viewBox="0 0 ' + s + ' ' + s + '"><defs><filter id="' + fid + '" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="2.5" result="blur"/><feFlood flood-color="' + color.glow + '" result="color"/><feComposite in="color" in2="blur" operator="in" result="glow"/><feMerge><feMergeNode in="glow"/><feMergeNode in="glow"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>' + shapes + '</svg>';
     }
 
     function spawnMol() {
@@ -1563,4 +1359,28 @@
       el.className = 'mol';
       el.innerHTML = makeMolSVG(color, size);
       el.style.left = (Math.random() * 95) + 'vw';
-      el.style.bottom = '
+      const duration = 14 + Math.random() * 16;
+      const delay = Math.random() * 4;
+      el.style.animation = 'molFloat ' + duration + 's ' + delay + 's linear infinite';
+      el.style.bottom = '-140px';
+      container.appendChild(el);
+      setTimeout(function() {
+        if (el.parentNode) el.parentNode.removeChild(el);
+        spawnMol();
+      }, (duration + delay) * 1800);
+    }
+
+    for (let i = 0; i < 35; i++) {
+      setTimeout(spawnMol, i * 280);
+    }
+  })();
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(function(r) { observer.observe(r); });
+</script>
+</body>
+</html>
